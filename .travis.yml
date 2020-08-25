@@ -19,3 +19,16 @@ after_success:
   - docker push plato28/multwo-nginx
   - docker push plato28/multwo-server
   - docker push plato28/multwo-worker
+
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: ap-northeast-2
+  app: multwo-docker
+  env: MultwoDocker-env
+  bucket_name: elasticbeanstalk-ap-northeast-2-822637900730
+  bucket_path: multwo-docker
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
