@@ -28,7 +28,7 @@
 			"hostname": "nginx",
 			"essential": true,
 			"memory": 128,
-			"postMapings": [
+			"portMapings": [
 				{
 					"hostPort": 80,
 					"containerPort": 80
